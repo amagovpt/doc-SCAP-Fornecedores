@@ -54,8 +54,14 @@
     
     <complexType name="SignatureInfo">
     	<sequence>
-    		<element name="DocumentHashToSign" type="base64Binary" maxOccurs="1" minOccurs="1"/>
+    		<element name="DocumentHashesToSign" type="tns:DocumentHashesToSign" maxOccurs="1" minOccurs="1"/>
     		<element name="SignatureTransactionId" type="int" maxOccurs="1" minOccurs="1"/>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="DocumentHashesToSign">
+    	<sequence>
+    		<element name="DocumentHashToSign" type="base64Binary" maxOccurs="unbounded" minOccurs="1"/>
     	</sequence>
     </complexType>
     
