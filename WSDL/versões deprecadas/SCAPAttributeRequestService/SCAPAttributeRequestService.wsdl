@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.scap.autenticacao.gov.pt/services/SCAPAttributeService"
+	xmlns:tns="http://www.scap.autenticacao.gov.pt/services/SCAPAttributeService"
+	xmlns:attman="http://www.scap.autenticacao.gov.pt/services/components/AttributeClientService"
+	name="SCAPAttributeRequestService"	>
+	
+	<wsdl:types>
+		<xsd:schema
+			targetNamespace="http://www.scap.autenticacao.gov.pt/services/SCAPAttributeService"
+			xmlns:attman="http://www.scap.autenticacao.gov.pt/services/components/AttributeClientService">
+
+			<xsd:import namespace="http://www.scap.autenticacao.gov.pt/services/components/AttributeClientService" 
+			schemaLocation="../../xsd/AttributeClientService.xsd" />
+			
+			<xsd:element name="AttributeRequest" type="attman:AttributeRequest" />
+		</xsd:schema>
+	</wsdl:types>
+	
+	<wsdl:message name="SCAPAttributeRequest">
+		<wsdl:part element="tns:AttributeRequest" name="AttributeRequest" />
+	</wsdl:message>
+
+	<wsdl:portType name="AttributeRequestService">
+		<wsdl:operation name="SearchAttributesRequest">
+			<wsdl:input message="tns:SCAPAttributeRequest" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="AttributeRequestServiceBinding" type="tns:AttributeRequestService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="SearchAttributesRequest">
+			<soap:operation soapAction="http://www.scap.autenticacao.gov.pt/SearchAttributes" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+		</wsdl:operation>
+	</wsdl:binding>
+	
+	<wsdl:service name="SCAPAttributeRequestService">
+		<wsdl:port name="AttributeRequestServicePort" binding="tns:AttributeRequestServiceBinding">
+			<soap:address location="http://localhost:8080/SCAPAttributeRequestService" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

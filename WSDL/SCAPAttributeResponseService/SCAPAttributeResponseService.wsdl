@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.scap.autenticacao.gov.pt/services/SCAPAttributeService"
+	xmlns:tns="http://www.scap.autenticacao.gov.pt/services/SCAPAttributeService"
+	xmlns:attman="http://www.scap.autenticacao.gov.pt/services/components/AttributeClientService"
+	name="SCAPAttributeResponseService">
+
+	<wsdl:types>
+		<xsd:schema
+			targetNamespace="http://www.scap.autenticacao.gov.pt/services/SCAPAttributeService"
+			xmlns:attman="http://www.scap.autenticacao.gov.pt/services/components/AttributeClientService">
+
+			<xsd:import
+				namespace="http://www.scap.autenticacao.gov.pt/services/components/AttributeClientService"
+				schemaLocation="AttributeClientService.xsd" />
+
+			<xsd:element name="AttributeResponse"
+				type="attman:AttributeResponse" />
+			<xsd:element name="ValidateOperationWithTOTPRequest"
+				type="attman:ValidateOperationRequest" />
+			<xsd:element name="GetAttributes">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="in" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="AttributeResponse">
+		<wsdl:part element="tns:AttributeResponse" name="AttributeResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="ValidateOperationWithTOTPRequest">
+		<wsdl:part element="tns:ValidateOperationWithTOTPRequest" name="ValidateOperationRequest" />
+	</wsdl:message>
+
+	<wsdl:message name="GetAttributesRequest">
+		<wsdl:part name="parameters" element="tns:GetAttributes"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="AttributeResponseService">
+		<wsdl:operation name="SearchAttributesResponse">
+			<wsdl:input name="AttributeResponse" message="tns:AttributeResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="ValidateOperationWithTOTPService">
+		<wsdl:operation name="ValidateOperationWithTOTP">
+			<wsdl:input name="ValidateOperationWithTOTPRequest" message="tns:ValidateOperationWithTOTPRequest" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="AttributeResponseServiceBinding" type="tns:AttributeResponseService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="SearchAttributesResponse">
+			<soap:operation
+				soapAction="http://www.scap.autenticacao.gov.pt/SCAPAttributeResponseService/SearchAttributes" />
+			<wsdl:input name="AttributeResponse">
+				<soap:body use="literal" />
+			</wsdl:input>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:binding name="ValidateOperationWithTOTPServiceBinding" type="tns:ValidateOperationWithTOTPService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="ValidateOperationWithTOTP">
+			<soap:operation
+				soapAction="http://www.scap.autenticacao.gov.pt/SCAPAttributeResponseService/ValidateOperationWithTOTP" />
+			<wsdl:input name="ValidateOperationWithTOTPRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="SCAPAttributeResponseService">
+		<wsdl:port binding="tns:AttributeResponseServiceBinding" name="AttributeResponseServicePort">
+			<soap:address location="http://localhost:8080/AttributeResponseService" />
+		</wsdl:port>
+		<wsdl:port binding="tns:ValidateOperationWithTOTPServiceBinding" name="ValidateOperationWithTOTPServicePort">
+			<soap:address location="http://localhost:8080/ValidateOperationWithTOTPService" />
+		</wsdl:port>
+	</wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.scap.autenticacao.gov.pt/components/Types" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  xmlns="http://www.scap.autenticacao.gov.pt/components/Types" 
+  elementFormDefault="qualified">
+
+	<xsd:simpleType name="ProcessIDType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="36" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="NameType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="255" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="DateType">
+		<xsd:restriction base="xsd:date" />
+	</xsd:simpleType>
+
+	<xsd:simpleType name="NICType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="8" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="ValueType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="255" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="DescriptionType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="255" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="ResponseCodeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="ResponseMessageType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="255" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>

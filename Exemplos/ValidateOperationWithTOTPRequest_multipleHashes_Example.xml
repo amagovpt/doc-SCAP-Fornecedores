@@ -1,0 +1,20 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:2065ad75-3641-4924-8b5c-040b2317a1a2</MessageID>
+		<RelatesTo xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:148b36b7-05fd-4bda-8853-15ec993dae4a</RelatesTo>
+	</soap:Header>
+	<soap:Body>
+		<ns3:ValidateOperationWithTOTPRequest xmlns:ns2="http://www.scap.autenticacao.gov.pt/services/components/AttributeClientService" xmlns:ns3="http://www.scap.autenticacao.gov.pt/services/SCAPAttributeService">
+			<ns2:ProcessId>f529ce82-065c-4041-b9c0-0760e0e3d1b7</ns2:ProcessId>
+			<ns2:AttributeProviderId>http://interop.gov.pt/SCAP/Fornecedor1</ns2:AttributeProviderId>
+			<ns2:TOTP>NTMwNDQy</ns2:TOTP>
+			<ns2:SignatureInfo>
+				<DocumentHashesToSign>
+					<DocumentHashToSign>MDEwDQYJYIZIAWUDBAIBBQAEIG3Sg9/Nzq2kxqKYBzg7JWhsE99BfH91wzXp7l0NGJjx</DocumentHashToSign>
+					<DocumentHashToSign>MDEwDQYJYIZIAWUDBAIBBQAEIAOxESPLqLyNN4XvBW718h4QGtEyMKfQmLNcl6CFRKUB</DocumentHashToSign>
+				</DocumentHashesToSign>
+				<SignatureTransactionId>0</SignatureTransactionId>
+			</ns2:SignatureInfo>
+		</ns3:ValidateOperationWithTOTPRequest>
+	</soap:Body>
+</soap:Envelope>

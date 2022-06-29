@@ -1,0 +1,39 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:48baa6cd-dde7-48b7-917f-e9f4a3d74831</MessageID>
+		<RelatesTo xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:148b36b7-05fd-4bda-8853-15ec993dae4a</RelatesTo>
+	</soap:Header>
+	<soap:Body>
+		<ns3:AttributeResponse xmlns:ns2="http://www.scap.autenticacao.gov.pt/services/components/AttributeClientService" xmlns:ns3="http://www.scap.autenticacao.gov.pt/services/SCAPAttributeService">
+			<ns2:ProcessId>f529ce82-065c-4041-b9c0-0760e0e3d1b7</ns2:ProcessId>
+			<ns2:ResponseStatus>
+				<ns2:ResponseCode>200</ns2:ResponseCode>
+				<ns2:ResponseMessage>Sucesso</ns2:ResponseMessage>
+			</ns2:ResponseStatus>
+			<ns2:AttributeProvider>
+				<ns2:Id>http://interop.gov.pt/SCAP/Fornecedor1</ns2:Id>
+				<ns2:Name>Fornecedor 1</ns2:Name>
+				<ns2:InfoFile>ZXlKTlpYUmhJam9pVFdwQmVVMUJQVDBxVTJaUE5YTkNUelpFV1hWbFNXWjJORGRPUVRoU2R6MDlJaXdpVFVGRElqb2lhVFJCUlV4RlkxSXdSVVJhUTIwcmJVWlRTRmMxUmtGU2VGVnJhakJLVFd0a1NuRndUVkJMU2tGclZUMGlMQ0pRWVhOemQyOXlaQ0k2SW5OUWVWQmhRVlJtYmpWV1dscENaRUZKSzBaaU5sRTlQU0o5</ns2:InfoFile>
+			</ns2:AttributeProvider>
+			<ns2:Attributes>
+				<ns2:Attribute>
+					<ns2:Id>http://interop.gov.pt/SCAP/Fornecedor1/Atributo</ns2:Id>
+					<ns2:Description>Consultor eID</ns2:Description>
+					<ns2:Validity>2021-12-25</ns2:Validity>
+					<ns2:SubAttributes>
+						<ns2:SubAttribute>
+							<ns2:Id>http://interop.gov.pt/SCAP/Fornecedor1/Atributo/Cargo</ns2:Id>
+							<ns2:Description>Cargo</ns2:Description>
+							<ns2:Value>Consultor</ns2:Value>
+						</ns2:SubAttribute>
+						<ns2:SubAttribute>
+							<ns2:Id>http://interop.gov.pt/SCAP/Fornecedor1/Atributo/AreaOrganica</ns2:Id>
+							<ns2:Description>AreaOrganica</ns2:Description>
+							<ns2:Value>eID</ns2:Value>
+						</ns2:SubAttribute>
+					</ns2:SubAttributes>						
+				</ns2:Attribute>
+			</ns2:Attributes>
+		</ns3:AttributeResponse>
+	</soap:Body>
+</soap:Envelope>

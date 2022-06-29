@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.scap.autenticacao.gov.pt/services/components/AttributeClientService"
+	xmlns:tns="http://www.scap.autenticacao.gov.pt/services/components/AttributeClientService"
+	xmlns:types="http://www.scap.autenticacao.gov.pt/components/Types"
+	elementFormDefault="qualified">
+	
+	<import namespace="http://www.scap.autenticacao.gov.pt/components/Types" schemaLocation="Types.xsd"/>
+
+    <element name="AttributeRequest" type="tns:AttributeRequest"/>
+    <element name="AttributeResponse" type="tns:AttributeResponse"/>
+    <element name="ValidateOperationRequest" type="tns:ValidateOperationRequest"/>
+    
+    <complexType name="ValidateOperationRequest">
+		<sequence>
+			<element name="ProcessId" type="types:ProcessIDType" maxOccurs="1" minOccurs="1" />
+			<element name="AttributeProviderId" type="anyURI" maxOccurs="1" minOccurs="1"/>
+			<element name="TOTP" type="base64Binary" maxOccurs="1" minOccurs="1"/>
+			<element name="SignatureInfo" type="tns:SignatureInfo" maxOccurs="1" minOccurs="0"/>
+		</sequence>
+	</complexType>
+    
+    <complexType name="AttributeRequest">
+		<sequence>
+			<element name="ProcessId" type="types:ProcessIDType" maxOccurs="1" minOccurs="1" />
+			<element name="Citizen" type="tns:Citizen" maxOccurs="1" minOccurs="1" />
+			<element name="AttributeProvider" type="tns:AttributeProvider" maxOccurs="1" minOccurs="1"/>
+			<element name="SignatureInfo" type="tns:SignatureInfo" maxOccurs="1" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="Citizen">
+		<sequence>
+			<element name="Name" type="types:NameType" maxOccurs="1" minOccurs="1"/>
+			<element name="DocumentInfo" type="tns:CitizenDocumentInfo" maxOccurs="1" minOccurs="1"/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="CitizenDocumentInfo">
+		<sequence>
+			<element name="type" type="string" maxOccurs="1" minOccurs="1"/>
+			<element name="country" type="string" maxOccurs="1" minOccurs="1"/>
+			<element name="id" type="string" maxOccurs="1" minOccurs="1"/>
+		</sequence>
+	</complexType>
+
+    <complexType name="AttributeProvider">
+    	<sequence>
+    		<element name="Id" type="anyURI" maxOccurs="1" minOccurs="1"/>
+    		<element name="Name" type="types:NameType" maxOccurs="1" minOccurs="1"/>
+    		<element name="InfoFile" type="base64Binary" maxOccurs="1" minOccurs="0"/>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="SignatureInfo">
+    	<sequence>
+    		<element name="DocumentHashesToSign" type="tns:DocumentHashesToSign" maxOccurs="1" minOccurs="1"/>
+    		<element name="SignatureTransactionId" type="int" maxOccurs="1" minOccurs="1"/>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="DocumentHashesToSign">
+    	<sequence>
+    		<element name="DocumentHashToSign" type="base64Binary" maxOccurs="unbounded" minOccurs="1"/>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="AttributeResponse">
+		<sequence>
+			<element name="ProcessId" type="types:ProcessIDType" maxOccurs="1" minOccurs="1"/>
+			<element name="ResponseStatus" type="tns:ResponseStatus" maxOccurs="1" minOccurs="1"/>
+			<element name="AttributeProvider" type="tns:AttributeProvider" maxOccurs="1" minOccurs="1"/>
+			<element name="Attributes" type="tns:Attributes" maxOccurs="1" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="ResponseStatus">
+		<sequence>
+			<element name="ResponseCode" type="types:ResponseCodeType" />
+			<element name="ResponseMessage" type="types:ResponseMessageType" />
+ 		</sequence>
+	</complexType>
+	
+ 	<complexType name="Attributes">
+    	<sequence>
+    		<element name="Attribute" type="tns:Attribute" maxOccurs="unbounded" minOccurs="1"/>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Attribute">
+    	<sequence>
+    		<element name="Id" type="anyURI" maxOccurs="1" minOccurs="1"/>
+    		<element name="Description" type="types:NameType" maxOccurs="1" minOccurs="1"/>
+    		<element name="Validity" type="types:DateType" maxOccurs="1" minOccurs="1"/>
+     		<element name="SubAttributes" type="tns:SubAttributes" maxOccurs="1" minOccurs="0"/>
+    	</sequence>
+    </complexType>
+
+     <complexType name="SubAttributes">
+    	<sequence>
+    		<element name="SubAttribute" type="tns:SubAttribute" maxOccurs="unbounded" minOccurs="1"/>
+    	</sequence>
+    </complexType>
+
+    <complexType name="SubAttribute">
+    	<sequence>
+    		<element name="Id" type="anyURI" maxOccurs="1" minOccurs="1"/>
+    		<element name="Description" type="types:DescriptionType" maxOccurs="1" minOccurs="1"/>
+    		<element name="Value" type="types:ValueType" maxOccurs="1" minOccurs="1"/>
+    	</sequence>
+    </complexType>
+
+</schema>
