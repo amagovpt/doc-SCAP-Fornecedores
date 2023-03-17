@@ -1,0 +1,22 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<MessageID>148b36b7-05fd-4bda-8853-15ec993dae4a</MessageID>
+	</soap:Header>
+	<soap:Body>
+		<ns4:AttributeRequest xmlns:ns4="http://www.scap.autenticacao.gov.pt/services/SCAPAttributeService">
+			<ProcessId xmlns="http://www.scap.autenticacao.gov.pt/services/components/AttributeClientService" xmlns:ns2="http://www.scap.autenticacao.gov.pt/services/SCAPAttributeService">f529ce82-065c-4041-b9c0-0760e0e3d1b7</ProcessId>
+			<Citizen xmlns="http://www.scap.autenticacao.gov.pt/services/components/AttributeClientService" xmlns:ns2="http://www.scap.autenticacao.gov.pt/services/SCAPAttributeService">
+				<DocumentInfo>
+					<type>BI</type>
+					<country>PT</country>
+					<id>13802352</id>
+				</DocumentInfo>
+			</Citizen>
+			<AttributeProvider xmlns="http://www.scap.autenticacao.gov.pt/services/components/AttributeClientService" xmlns:ns2="http://www.scap.autenticacao.gov.pt/services/SCAPAttributeService">
+				<Id>http://interop.gov.pt/SCAP/FornecedorTeste1</Id>
+				<Name>Fornecedor Teste 1</Name>
+			</AttributeProvider>
+			<RequestType xmlns="http://www.scap.autenticacao.gov.pt/services/components/AttributeClientService" xmlns:ns2="http://www.scap.autenticacao.gov.pt/services/SCAPAttributeService">IDGOVCARD</RequestType>
+		</ns4:AttributeRequest>
+	</soap:Body>
+</soap:Envelope>

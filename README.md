@@ -22,7 +22,7 @@ Este repositório contêm a documentação técnica relativamente ao Sistema de 
 * Na pasta **iAP-VPN** disponibilizam-se os documentos com os requisitos necessários para a ligação VPN sobre internet e requisitos técnicos para utilização da plataforma de interoperabilidade da administração pública.
 * A pasta **Exemplos** contém exemplos de pedidos e respostas dos web services e também um exemplo de geração de OTP em java.
 	* A pasta **versões deprecadas** contém exemplos de pedidos e respostas das versões deprecadas dos web services. 
-* [Manual de Integração para Fornecedores de Atributos (download pdf)](https://amagovpt.github.io/doc-SCAP-Fornecedores/SCAP&#32;-&#32;Manual&#32;de&#32;Integração&#32;para&#32;Fornecedores&#32;de&#32;Atributos&#32;V2.6.pdf).
+* [Manual de Integração para Fornecedores de Atributos (download pdf)](https://amagovpt.github.io/doc-SCAP-Fornecedores/SCAP&#32;-&#32;Manual&#32;de&#32;Integração&#32;para&#32;Fornecedores&#32;de&#32;Atributos.pdf).
 
 ## Certificação
 Para a certificação deverão ser fornecidas as seguintes evidências:

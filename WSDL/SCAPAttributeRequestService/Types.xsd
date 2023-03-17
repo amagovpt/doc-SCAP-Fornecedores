@@ -49,5 +49,53 @@
 			<xsd:maxLength value="255" />
 		</xsd:restriction>
 	</xsd:simpleType>
+	
+	<xsd:simpleType name="EmailType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="PhoneNumberType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="25" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="NIPCType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="9" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="CardTypeDescriptionType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="25" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="AdditionalInfoType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="250" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="AddressType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="255" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="WebsiteType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="255" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="FieldType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="50" />
+		</xsd:restriction>
+	</xsd:simpleType>
 
 </xsd:schema>
