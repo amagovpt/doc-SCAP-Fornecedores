@@ -134,7 +134,6 @@
 			<element name="CardType" type="tns:ExtraFieldCardType" maxOccurs="1" minOccurs="0"/>
 			<element name="Email" type="tns:ExtraFieldEmailType" maxOccurs="1" minOccurs="0"/>
 			<element name="PhoneNumber" type="tns:ExtraFieldPhoneNumberType" maxOccurs="1" minOccurs="0"/>
-			<element name="HandwrittenSignature" type="boolean" maxOccurs="1" minOccurs="0"/>
 			<element name="ExtraFields" type="tns:ExtraFields" maxOccurs="1" minOccurs="0"/>
 		</sequence>
 	</complexType>
@@ -151,7 +150,7 @@
 
 	<complexType name="ExtraFieldCardType">
 		<sequence>
-			<element name="Description" type="types:CardTypeDescriptionType" maxOccurs="1" minOccurs="1"/>
+			<element name="Value" type="types:CardTypeValueType" maxOccurs="1" minOccurs="1"/>
 			<element name="AdditionalInfo" type="types:AdditionalInfoType" maxOccurs="1" minOccurs="0"/>
 		</sequence>
 	</complexType>
@@ -194,6 +193,7 @@
 		<sequence>
 			<element name="Id" type="types:FieldType" maxOccurs="1" minOccurs="1"/>
 			<element name="Description" type="types:FieldType" maxOccurs="1" minOccurs="1"/>
+			<element name="Value" type="types:FieldType" maxOccurs="1" minOccurs="1"/>
 			<element name="AdditionalInfo" type="types:AdditionalInfoType" maxOccurs="1" minOccurs="0"/>
 			<element name="Visible" type="boolean" maxOccurs="1" minOccurs="1"/>
 		</sequence>

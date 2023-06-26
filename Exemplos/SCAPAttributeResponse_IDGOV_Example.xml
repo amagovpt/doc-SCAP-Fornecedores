@@ -37,7 +37,7 @@
 			<ns2:ExtraInfo>
 				<ns2:CitizenExtraInfo>
 					<ns2:CardType>
-						<ns2:Description>Livre Transito XPTO</ns2:Description>
+						<ns2:Value>Livre Transito XPTO</ns2:Value>
 						<ns2:AdditionalInfo>Este cartão pode ser usado por todas as pessoas que queiram aceder à zona XPTO</ns2:AdditionalInfo>
 					</ns2:CardType>
 					<ns2:Email>
@@ -48,18 +48,19 @@
 						<ns2:Value>+351 901123456</ns2:Value>
 						<ns2:Visible>true</ns2:Visible>
 					</ns2:PhoneNumber>
-					<ns2:HandwrittenSignature>true</ns2:HandwrittenSignature>
 					<ns2:ExtraFields>
 						<ns2:ExtraField>
-							<ns2:Id>citizen_extraField_id_1</ns2:Id>
-							<ns2:Description>citizen_extraField_description_1</ns2:Description>
-							<ns2:AdditionalInfo>citizen_extraField_additionalInfo_1</ns2:AdditionalInfo>
-							<ns2:Visible>false</ns2:Visible>
+							<ns2:Id>citizenExtraField_1</ns2:Id>
+							<ns2:Description>Campo Extra 1 Cidadão</ns2:Description>
+							<ns2:Value>Valor do Campo Extra 1 Cidadão</ns2:Value>
+							<ns2:AdditionalInfo>Informação adicional do Campo Extra 1 Cidadão</ns2:AdditionalInfo>
+							<ns2:Visible>true</ns2:Visible>
 						</ns2:ExtraField>
 						<ns2:ExtraField>
-							<ns2:Id>citizen_extraField_id_2</ns2:Id>
-							<ns2:Description>citizen_extraField_description_2</ns2:Description>
-							<ns2:AdditionalInfo>ecitizen_xtraField_additionalInfo_2</ns2:AdditionalInfo>
+							<ns2:Id>citizenExtraField_2</ns2:Id>
+							<ns2:Description>Campo Extra 2 Cidadão</ns2:Description>
+							<ns2:Value>Valor do Campo Extra 2 Cidadão</ns2:Value>
+							<ns2:AdditionalInfo>Informação adicional do Campo Extra 2 Cidadão</ns2:AdditionalInfo>
 							<ns2:Visible>false</ns2:Visible>
 						</ns2:ExtraField>
 					</ns2:ExtraFields>
@@ -77,20 +78,22 @@
 					</ns2:Website>
 					<ns2:ExtraFields>
 						<ns2:ExtraField>
-							<ns2:Id>entity_extraField_id_1</ns2:Id>
-							<ns2:Description>entity_extraField_description_1</ns2:Description>
-							<ns2:AdditionalInfo>entity_extraField_additionalInfo_1</ns2:AdditionalInfo>
-							<ns2:Visible>false</ns2:Visible>
+							<ns2:Id>entityExtraField_1</ns2:Id>
+							<ns2:Description>Campo Extra 1 Entidade</ns2:Description>
+							<ns2:Value>Valor do Campo Extra 1 Entidade</ns2:Value>
+							<ns2:AdditionalInfo>Informação adicional do Campo Extra 1 Entidade</ns2:AdditionalInfo>
+							<ns2:Visible>true</ns2:Visible>
 						</ns2:ExtraField>
 						<ns2:ExtraField>
-							<ns2:Id>entity_extraField_id_2</ns2:Id>
-							<ns2:Description>entity_extraField_description_2</ns2:Description>
-							<ns2:AdditionalInfo>entity_extraField_additionalInfo_2</ns2:AdditionalInfo>
+							<ns2:Id>entityExtraField_2</ns2:Id>
+							<ns2:Description>Campo Extra 2 Entidade</ns2:Description>
+							<ns2:Value>Valor do Campo Extra 2 Entidade</ns2:Value>
+							<ns2:AdditionalInfo>Informação adicional do Campo Extra 2 Entidade</ns2:AdditionalInfo>
 							<ns2:Visible>false</ns2:Visible>
 						</ns2:ExtraField>
 					</ns2:ExtraFields>
 				</ns2:EntityExtraInfo>
-			</ns2:ExtraInfo>			
+			</ns2:ExtraInfo>		
 		</ns3:AttributeResponse>
 	</soap:Body>
 </soap:Envelope>
