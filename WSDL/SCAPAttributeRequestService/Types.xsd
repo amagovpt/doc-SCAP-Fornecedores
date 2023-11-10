@@ -68,7 +68,7 @@
 		</xsd:restriction>
 	</xsd:simpleType>
 
-	<xsd:simpleType name="CardTypeDescriptionType">
+	<xsd:simpleType name="CardTypeValueType">
 		<xsd:restriction base="xsd:string">
 			<xsd:maxLength value="25" />
 		</xsd:restriction>
