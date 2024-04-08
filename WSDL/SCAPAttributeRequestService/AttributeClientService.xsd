@@ -131,6 +131,7 @@
 	
 	<complexType name="CitizenExtraInfo">
 		<sequence>
+			<element name="MainDocumentNumber" type="tns:ExtraFieldMainDocumentNumberType" maxOccurs="1" minOccurs="0"/>
 			<element name="CardType" type="tns:ExtraFieldCardType" maxOccurs="1" minOccurs="0"/>
 			<element name="Email" type="tns:ExtraFieldEmailType" maxOccurs="1" minOccurs="0"/>
 			<element name="PhoneNumber" type="tns:ExtraFieldPhoneNumberType" maxOccurs="1" minOccurs="0"/>
@@ -198,5 +199,11 @@
 			<element name="Visible" type="boolean" maxOccurs="1" minOccurs="1"/>
 		</sequence>
 	</complexType>
+
+	<simpleType name="ExtraFieldMainDocumentNumberType">
+		<restriction base="string">
+			<maxLength value="25" />
+		</restriction>
+	</simpleType>
 
 </schema>

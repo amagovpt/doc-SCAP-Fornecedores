@@ -36,6 +36,7 @@
 			</ns2:Attributes>
 			<ns2:ExtraInfo>
 				<ns2:CitizenExtraInfo>
+					<ns2:MainDocumentNumber>MDocN-123456789</ns2:MainDocumentNumber>				
 					<ns2:CardType>
 						<ns2:Value>Livre Transito XPTO</ns2:Value>
 						<ns2:AdditionalInfo>Este cartão pode ser usado por todas as pessoas que queiram aceder à zona XPTO</ns2:AdditionalInfo>
